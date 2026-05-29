@@ -1,0 +1,236 @@
+{
+  "id": "gmat-quant",
+  "title": "GMAT Quantitative",
+  "exam": "GMAT",
+  "section": "Quantitative (Problem Solving)",
+  "description": "GMAT Focus Quant: Problem Solving only — algebra, arithmetic, number properties, and word problems across easy, medium, and hard levels.",
+  "timeLimitSec": 1200,
+  "questions": [
+    {
+      "id": "q1",
+      "category": "Algebra",
+      "difficulty": "easy",
+      "prompt": "If $3x + 7 = 22$, what is the value of $x$?",
+      "choices": [
+        { "id": "A", "text": "$3$" },
+        { "id": "B", "text": "$5$" },
+        { "id": "C", "text": "$7$" },
+        { "id": "D", "text": "$15$" }
+      ],
+      "answer": "B",
+      "explanation": "$3x + 7 = 22 \\Rightarrow 3x = 15 \\Rightarrow x = 5$."
+    },
+    {
+      "id": "q2",
+      "category": "Arithmetic",
+      "difficulty": "easy",
+      "prompt": "A store offers a $20\\%$ discount on an item priced at \\$80. What is the sale price?",
+      "choices": [
+        { "id": "A", "text": "\\$16" },
+        { "id": "B", "text": "\\$60" },
+        { "id": "C", "text": "\\$64" },
+        { "id": "D", "text": "\\$76" }
+      ],
+      "answer": "C",
+      "explanation": "$20\\%$ of \\$80 is \\$16, so the sale price is $80-16=\\$64$."
+    },
+    {
+      "id": "q3",
+      "category": "Statistics",
+      "difficulty": "medium",
+      "prompt": "If the average (arithmetic mean) of $5$, $8$, and $x$ is $10$, what is $x$?",
+      "choices": [
+        { "id": "A", "text": "$12$" },
+        { "id": "B", "text": "$15$" },
+        { "id": "C", "text": "$17$" },
+        { "id": "D", "text": "$23$" }
+      ],
+      "answer": "C",
+      "explanation": "$\\dfrac{5+8+x}{3}=10 \\Rightarrow 13+x=30 \\Rightarrow x=17$."
+    },
+    {
+      "id": "q4",
+      "category": "Number Properties",
+      "difficulty": "medium",
+      "prompt": "What is the value of $\\dfrac{2^5 \\cdot 2^3}{2^6}$?",
+      "choices": [
+        { "id": "A", "text": "$2$" },
+        { "id": "B", "text": "$4$" },
+        { "id": "C", "text": "$8$" },
+        { "id": "D", "text": "$16$" }
+      ],
+      "answer": "B",
+      "explanation": "$\\dfrac{2^{5+3}}{2^6}=2^{8-6}=2^2=4$."
+    },
+    {
+      "id": "q5",
+      "category": "Geometry",
+      "difficulty": "medium",
+      "prompt": "The figure shows a circle with center $O$ and radius $6$. What is the area of the shaded $90^\\circ$ sector?",
+      "image": "/data/images/circle-sector.svg",
+      "imageAlt": "Circle of radius 6 with a 90-degree sector shaded",
+      "choices": [
+        { "id": "A", "text": "$3\\pi$" },
+        { "id": "B", "text": "$6\\pi$" },
+        { "id": "C", "text": "$9\\pi$" },
+        { "id": "D", "text": "$36\\pi$" }
+      ],
+      "answer": "C",
+      "explanation": "A $90^\\circ$ sector is $\\tfrac14$ of the circle: $\\tfrac14\\pi r^2=\\tfrac14\\pi(6)^2=9\\pi$."
+    },
+    {
+      "id": "q6",
+      "category": "Word Problems",
+      "difficulty": "easy",
+      "prompt": "A train travels $180$ miles in $3$ hours. At the same rate, how far does it travel in $5$ hours?",
+      "choices": [
+        { "id": "A", "text": "$240$ miles" },
+        { "id": "B", "text": "$270$ miles" },
+        { "id": "C", "text": "$300$ miles" },
+        { "id": "D", "text": "$360$ miles" }
+      ],
+      "answer": "C",
+      "explanation": "Rate $=180/3=60$ mph, so in $5$ hours it travels $60\\times5=300$ miles."
+    },
+    {
+      "id": "q7",
+      "category": "Algebra",
+      "difficulty": "easy",
+      "prompt": "If $2(x - 3) = 10$, what is the value of $x$?",
+      "choices": [
+        { "id": "A", "text": "$2$" },
+        { "id": "B", "text": "$5$" },
+        { "id": "C", "text": "$8$" },
+        { "id": "D", "text": "$11$" }
+      ],
+      "answer": "C",
+      "explanation": "$2(x-3)=10 \\Rightarrow x-3=5 \\Rightarrow x=8$."
+    },
+    {
+      "id": "q8",
+      "category": "Arithmetic",
+      "difficulty": "hard",
+      "prompt": "$x$ is $25\\%$ of $y$, and $y$ is $40\\%$ of $z$. $x$ is what percent of $z$?",
+      "choices": [
+        { "id": "A", "text": "$10\\%$" },
+        { "id": "B", "text": "$15\\%$" },
+        { "id": "C", "text": "$65\\%$" },
+        { "id": "D", "text": "$100\\%$" }
+      ],
+      "answer": "A",
+      "explanation": "$x = 0.25y = 0.25(0.40z) = 0.10z$, so $x$ is $10\\%$ of $z$."
+    },
+    {
+      "id": "q9",
+      "category": "Word Problems",
+      "difficulty": "medium",
+      "prompt": "If $5$ identical machines produce a batch in $12$ days, how many days do $10$ such machines take to produce the same batch (working at the same rate)?",
+      "choices": [
+        { "id": "A", "text": "$3$ days" },
+        { "id": "B", "text": "$6$ days" },
+        { "id": "C", "text": "$10$ days" },
+        { "id": "D", "text": "$24$ days" }
+      ],
+      "answer": "B",
+      "explanation": "Doubling the machines halves the time: $12 \\div 2 = 6$ days (work is inversely proportional to the number of machines)."
+    },
+    {
+      "id": "q10",
+      "category": "Number Properties",
+      "difficulty": "hard",
+      "prompt": "What is the remainder when $7^4$ is divided by $5$?",
+      "choices": [
+        { "id": "A", "text": "$0$" },
+        { "id": "B", "text": "$1$" },
+        { "id": "C", "text": "$2$" },
+        { "id": "D", "text": "$4$" }
+      ],
+      "answer": "B",
+      "explanation": "$7 \\equiv 2 \\pmod 5$ and $2^4 = 16 \\equiv 1 \\pmod 5$, so the remainder is $1$ (indeed $7^4 = 2401 = 5\\cdot480 + 1$)."
+    },
+    {
+      "id": "q11",
+      "category": "Arithmetic",
+      "difficulty": "easy",
+      "prompt": "What is $15\\%$ of $200$?",
+      "choices": [
+        { "id": "A", "text": "$15$" },
+        { "id": "B", "text": "$20$" },
+        { "id": "C", "text": "$30$" },
+        { "id": "D", "text": "$45$" }
+      ],
+      "answer": "C",
+      "explanation": "$0.15 \\times 200 = 30$."
+    },
+    {
+      "id": "q12",
+      "category": "Algebra",
+      "difficulty": "medium",
+      "prompt": "Solve for $x$: $5x - 2 = 3x + 8$.",
+      "choices": [
+        { "id": "A", "text": "$3$" },
+        { "id": "B", "text": "$5$" },
+        { "id": "C", "text": "$6$" },
+        { "id": "D", "text": "$10$" }
+      ],
+      "answer": "B",
+      "explanation": "$5x - 3x = 8 + 2 \\Rightarrow 2x = 10 \\Rightarrow x = 5$."
+    },
+    {
+      "id": "q13",
+      "category": "Algebra",
+      "difficulty": "hard",
+      "prompt": "If $x^2 - 5x + 6 = 0$, what is the larger of the two solutions for $x$?",
+      "choices": [
+        { "id": "A", "text": "$1$" },
+        { "id": "B", "text": "$2$" },
+        { "id": "C", "text": "$3$" },
+        { "id": "D", "text": "$6$" }
+      ],
+      "answer": "C",
+      "explanation": "$x^2 - 5x + 6 = (x-2)(x-3) = 0$, so $x = 2$ or $x = 3$; the larger is $3$."
+    },
+    {
+      "id": "q14",
+      "category": "Word Problems",
+      "difficulty": "medium",
+      "prompt": "Pipe A fills a tank in $6$ hours and pipe B fills it in $12$ hours. Working together, how long do they take?",
+      "choices": [
+        { "id": "A", "text": "$3$ hours" },
+        { "id": "B", "text": "$4$ hours" },
+        { "id": "C", "text": "$8$ hours" },
+        { "id": "D", "text": "$9$ hours" }
+      ],
+      "answer": "B",
+      "explanation": "Combined rate $= \\tfrac16 + \\tfrac1{12} = \\tfrac{3}{12} = \\tfrac14$ tank/hour, so it takes $4$ hours."
+    },
+    {
+      "id": "q15",
+      "category": "Number Properties",
+      "difficulty": "hard",
+      "prompt": "How many integers from $1$ to $100$ inclusive are divisible by $3$ or $5$?",
+      "choices": [
+        { "id": "A", "text": "$33$" },
+        { "id": "B", "text": "$40$" },
+        { "id": "C", "text": "$47$" },
+        { "id": "D", "text": "$53$" }
+      ],
+      "answer": "C",
+      "explanation": "By inclusion–exclusion: $\\lfloor100/3\\rfloor + \\lfloor100/5\\rfloor - \\lfloor100/15\\rfloor = 33 + 20 - 6 = 47$."
+    },
+    {
+      "id": "q16",
+      "category": "Arithmetic",
+      "difficulty": "hard",
+      "prompt": "A quantity is increased by $25\\%$ and then the result is decreased by $20\\%$. The net change from the original is:",
+      "choices": [
+        { "id": "A", "text": "$-5\\%$" },
+        { "id": "B", "text": "$0\\%$ (unchanged)" },
+        { "id": "C", "text": "$+5\\%$" },
+        { "id": "D", "text": "$+45\\%$" }
+      ],
+      "answer": "B",
+      "explanation": "$1.25 \\times 0.80 = 1.00$, so the quantity returns to its original value — a net change of $0\\%$."
+    }
+  ]
+}

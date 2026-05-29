@@ -1,0 +1,67 @@
+{
+  "id": "gre-quant",
+  "title": "GRE Quantitative",
+  "exam": "GRE",
+  "section": "Quantitative Comparison",
+  "description": "Compare two quantities and problem-solving with arithmetic, algebra, and data.",
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Quantity A: $2^{10}$ Quantity B: $10^{3}$\n\nWhich is greater?",
+      "choices": [
+        { "id": "A", "text": "Quantity A is greater." },
+        { "id": "B", "text": "Quantity B is greater." },
+        { "id": "C", "text": "The two quantities are equal." },
+        { "id": "D", "text": "The relationship cannot be determined." }
+      ],
+      "answer": "A",
+      "explanation": "$2^{10}=1024$ and $10^3=1000$, so Quantity A is greater."
+    },
+    {
+      "id": "q2",
+      "prompt": "If $x$ is a positive integer, Quantity A: $\\dfrac{x}{x+1}$ Quantity B: $\\dfrac{x+1}{x+2}$\n\nWhich is greater?",
+      "choices": [
+        { "id": "A", "text": "Quantity A is greater." },
+        { "id": "B", "text": "Quantity B is greater." },
+        { "id": "C", "text": "The two quantities are equal." },
+        { "id": "D", "text": "The relationship cannot be determined." }
+      ],
+      "answer": "B",
+      "explanation": "As $x$ grows, $\\frac{x}{x+1}$ increases toward 1. For any positive integer, $\\frac{x+1}{x+2} > \\frac{x}{x+1}$ (cross-multiplying: $(x+1)^2 > x(x+2)$ → $x^2+2x+1 > x^2+2x$). So Quantity B is greater."
+    },
+    {
+      "id": "q3",
+      "prompt": "A jar contains $3$ red and $5$ blue marbles. If one marble is drawn at random, what is the probability it is red?",
+      "choices": [
+        { "id": "A", "text": "$\\tfrac{3}{8}$" },
+        { "id": "B", "text": "$\\tfrac{3}{5}$" },
+        { "id": "C", "text": "$\\tfrac{5}{8}$" },
+        { "id": "D", "text": "$\\tfrac{1}{2}$" }
+      ],
+      "answer": "A",
+      "explanation": "There are $3+5=8$ marbles; $P(\\text{red})=\\frac{3}{8}$."
+    },
+    {
+      "id": "q4",
+      "prompt": "If $3^{x} = 81$, what is the value of $x$?",
+      "choices": [
+        { "id": "A", "text": "$2$" },
+        { "id": "B", "text": "$3$" },
+        { "id": "C", "text": "$4$" },
+        { "id": "D", "text": "$27$" }
+      ],
+      "answer": "C",
+      "explanation": "$81 = 3^4$, so $x=4$."
+    },
+    {
+      "id": "q5",
+      "type": "numeric",
+      "prompt": "Numeric Entry: A jacket priced at \\$60 is discounted by $15\\%$. What is the sale price, in dollars?",
+      "choices": [],
+      "answer": "51",
+      "tolerance": 0.01,
+      "unit": "$",
+      "explanation": "$15\\%$ of \\$60 is \\$9, so the sale price is $60 - 9 = \\$51$. Numeric Entry accepts the typed value (here, exactly 51)."
+    }
+  ]
+}

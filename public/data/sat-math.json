@@ -1,0 +1,82 @@
+{
+  "id": "sat-math",
+  "title": "SAT Math",
+  "exam": "SAT",
+  "section": "Heart of Algebra & Geometry",
+  "description": "Linear equations, functions, and geometry — including diagram-based questions.",
+  "timeLimitSec": 600,
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "In the right triangle shown, what is the length of the hypotenuse $c$?",
+      "image": "/data/images/right-triangle.svg",
+      "imageAlt": "Right triangle with legs of length 6 and 8 and hypotenuse c",
+      "choices": [
+        { "id": "A", "text": "$10$" },
+        { "id": "B", "text": "$12$" },
+        { "id": "C", "text": "$14$" },
+        { "id": "D", "text": "$\\sqrt{100}+2$" }
+      ],
+      "answer": "A",
+      "explanation": "By the Pythagorean theorem, $c=\\sqrt{6^2+8^2}=\\sqrt{36+64}=\\sqrt{100}=10$."
+    },
+    {
+      "id": "q2",
+      "prompt": "The graph shows a line in the $xy$-plane passing through the marked points. What is the equation of the line?",
+      "image": "/data/images/line-graph.svg",
+      "imageAlt": "Line through the points (0, 1) and (2, 5) on a coordinate grid",
+      "choices": [
+        { "id": "A", "text": "$y = x + 1$" },
+        { "id": "B", "text": "$y = 2x + 1$" },
+        { "id": "C", "text": "$y = 2x - 1$" },
+        { "id": "D", "text": "$y = \\tfrac{1}{2}x + 1$" }
+      ],
+      "answer": "B",
+      "explanation": "Slope $=\\dfrac{5-1}{2-0}=2$ and the $y$-intercept is $1$, so $y=2x+1$."
+    },
+    {
+      "id": "q3",
+      "prompt": "If $\\dfrac{x}{3} + 4 = 9$, what is the value of $x$?",
+      "choices": [
+        { "id": "A", "text": "$9$" },
+        { "id": "B", "text": "$12$" },
+        { "id": "C", "text": "$15$" },
+        { "id": "D", "text": "$21$" }
+      ],
+      "answer": "C",
+      "explanation": "$\\dfrac{x}{3}=5$, so $x=15$."
+    },
+    {
+      "id": "q4",
+      "prompt": "If $f(x) = 3x - 4$, what is $f(6)$?",
+      "choices": [
+        { "id": "A", "text": "$10$" },
+        { "id": "B", "text": "$14$" },
+        { "id": "C", "text": "$18$" },
+        { "id": "D", "text": "$22$" }
+      ],
+      "answer": "B",
+      "explanation": "$f(6)=3(6)-4=18-4=14$."
+    },
+    {
+      "id": "q5",
+      "prompt": "Which of the following is equivalent to $(x+3)(x-5)$?",
+      "choices": [
+        { "id": "A", "text": "$x^2 - 2x - 15$" },
+        { "id": "B", "text": "$x^2 + 2x - 15$" },
+        { "id": "C", "text": "$x^2 - 8x - 15$" },
+        { "id": "D", "text": "$x^2 - 15$" }
+      ],
+      "answer": "A",
+      "explanation": "$(x+3)(x-5)=x^2-5x+3x-15=x^2-2x-15$."
+    },
+    {
+      "id": "q6",
+      "type": "numeric",
+      "prompt": "Grid-in: If $4x - 9 = 23$, what is the value of $x$?",
+      "choices": [],
+      "answer": "8",
+      "explanation": "$4x = 32$, so $x = 8$. Grid-in questions require typing the exact value — no answer choices."
+    }
+  ]
+}

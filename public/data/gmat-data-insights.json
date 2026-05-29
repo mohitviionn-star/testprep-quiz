@@ -1,0 +1,210 @@
+{
+  "id": "gmat-data-insights",
+  "title": "GMAT Data Insights",
+  "exam": "GMAT",
+  "section": "Data Insights",
+  "description": "GMAT Focus Data Insights: Data Sufficiency, Two-Part Analysis, Graphics Interpretation, Table Analysis, and Multi-Source Reasoning. Multi-part questions must be fully correct to earn credit.",
+  "timeLimitSec": 720,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Data Sufficiency",
+      "difficulty": "medium",
+      "prompt": "Is $x > 0$?\n\n(1) $x^2 = 16$\n(2) $x^3 = 64$",
+      "choices": [
+        { "id": "A", "text": "Statement (1) ALONE is sufficient, but (2) alone is not." },
+        { "id": "B", "text": "Statement (2) ALONE is sufficient, but (1) alone is not." },
+        { "id": "C", "text": "BOTH together are sufficient, but NEITHER alone is." },
+        { "id": "D", "text": "EACH statement ALONE is sufficient." },
+        { "id": "E", "text": "Statements (1) and (2) TOGETHER are NOT sufficient." }
+      ],
+      "answer": "B",
+      "explanation": "(1) $x^2=16 \\Rightarrow x=\\pm4$ — not sufficient. (2) $x^3=64 \\Rightarrow x=4$ only, so $x>0$ — sufficient. Answer: B."
+    },
+    {
+      "id": "q2",
+      "type": "two-part",
+      "category": "Two-Part Analysis",
+      "difficulty": "medium",
+      "prompt": "A group buys exactly 10 tickets for a total of \\$74. Adult tickets cost \\$9 each and child tickets cost \\$5 each. In the table, select the number of adult tickets and the number of child tickets purchased. Make only one selection in each column.",
+      "columnLabels": ["Adult tickets", "Child tickets"],
+      "rows": [
+        { "id": "A", "text": "2" },
+        { "id": "B", "text": "4" },
+        { "id": "C", "text": "6" },
+        { "id": "D", "text": "8" }
+      ],
+      "answer": "C,B",
+      "explanation": "Let $a$ adult tickets. Then $9a + 5(10-a) = 74 \\Rightarrow 4a + 50 = 74 \\Rightarrow a = 6$, so children $= 4$. Adult = 6, Child = 4."
+    },
+    {
+      "id": "q3",
+      "type": "graphics",
+      "category": "Graphics Interpretation",
+      "difficulty": "easy",
+      "prompt": "Use the bar chart of quarterly sales to complete each statement.",
+      "image": "/data/images/bar-chart.svg",
+      "imageAlt": "Bar chart: Q1 20, Q2 35, Q3 30, Q4 45 (thousands of dollars)",
+      "parts": [
+        {
+          "id": "p1",
+          "prompt": "The quarter with the highest sales was",
+          "choices": [
+            { "id": "A", "text": "Q1" },
+            { "id": "B", "text": "Q2" },
+            { "id": "C", "text": "Q3" },
+            { "id": "D", "text": "Q4" }
+          ],
+          "answer": "D"
+        },
+        {
+          "id": "p2",
+          "prompt": "Compared with Q3, sales in Q2 were",
+          "choices": [
+            { "id": "A", "text": "greater" },
+            { "id": "B", "text": "less" },
+            { "id": "C", "text": "equal" }
+          ],
+          "answer": "A"
+        }
+      ],
+      "answer": "",
+      "explanation": "Q4 is the tallest bar at 45. Q2 (35) is greater than Q3 (30)."
+    },
+    {
+      "id": "q4",
+      "type": "table-analysis",
+      "category": "Table Analysis",
+      "difficulty": "medium",
+      "prompt": "Based on the employee data, indicate whether each statement is True or False.",
+      "table": {
+        "columns": ["Name", "Department", "Salary", "Years"],
+        "rows": [
+          ["Ana", "Sales", "$60,000", "5"],
+          ["Ben", "Engineering", "$85,000", "3"],
+          ["Cara", "Engineering", "$92,000", "8"],
+          ["Dan", "Sales", "$55,000", "2"]
+        ]
+      },
+      "parts": [
+        {
+          "id": "p1",
+          "prompt": "More than half of the employees work in Engineering.",
+          "choices": [
+            { "id": "T", "text": "True" },
+            { "id": "F", "text": "False" }
+          ],
+          "answer": "F"
+        },
+        {
+          "id": "p2",
+          "prompt": "The employee with the highest salary also has the most years of service.",
+          "choices": [
+            { "id": "T", "text": "True" },
+            { "id": "F", "text": "False" }
+          ],
+          "answer": "T"
+        },
+        {
+          "id": "p3",
+          "prompt": "At least one Sales employee earns more than $80,000.",
+          "choices": [
+            { "id": "T", "text": "True" },
+            { "id": "F", "text": "False" }
+          ],
+          "answer": "F"
+        }
+      ],
+      "answer": "",
+      "explanation": "Engineering = 2 of 4 (exactly half, not more) → False. Cara has both the highest salary ($92k) and most years (8) → True. Sales salaries are $60k and $55k, neither above $80k → False."
+    },
+    {
+      "id": "q5",
+      "type": "multi-source",
+      "category": "Multi-Source Reasoning",
+      "difficulty": "hard",
+      "prompt": "Using both tabs, indicate whether each statement is True or False.",
+      "sources": [
+        {
+          "title": "Memo",
+          "content": "The project has three phases. Phase 2 cannot begin until Phase 1 is complete. The client requires final delivery (end of Phase 3) no later than June 30."
+        },
+        {
+          "title": "Timeline",
+          "table": {
+            "columns": ["Phase", "Start", "Duration (days)"],
+            "rows": [
+              ["Phase 1", "June 1", "10"],
+              ["Phase 2", "June 12", "8"],
+              ["Phase 3", "June 21", "7"]
+            ]
+          }
+        }
+      ],
+      "parts": [
+        {
+          "id": "p1",
+          "prompt": "Phase 2 begins only after Phase 1 is complete.",
+          "choices": [
+            { "id": "T", "text": "True" },
+            { "id": "F", "text": "False" }
+          ],
+          "answer": "T"
+        },
+        {
+          "id": "p2",
+          "prompt": "The project is scheduled to finish on or before June 30.",
+          "choices": [
+            { "id": "T", "text": "True" },
+            { "id": "F", "text": "False" }
+          ],
+          "answer": "T"
+        },
+        {
+          "id": "p3",
+          "prompt": "Phase 3 has the longest duration of the three phases.",
+          "choices": [
+            { "id": "T", "text": "True" },
+            { "id": "F", "text": "False" }
+          ],
+          "answer": "F"
+        }
+      ],
+      "answer": "",
+      "explanation": "Phase 1 ends ~June 10; Phase 2 starts June 12 → True. Phase 3 ends June 21 + 7 = June 27, before June 30 → True. Durations are 10, 8, 7, so Phase 1 (not Phase 3) is longest → False."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "category": "Data Sufficiency",
+      "difficulty": "hard",
+      "prompt": "What is the value of the integer $n$?\n\n(1) $n$ is a prime number between $20$ and $30$.\n(2) $n$ is one less than a multiple of $6$.",
+      "choices": [
+        { "id": "A", "text": "Statement (1) ALONE is sufficient, but (2) alone is not." },
+        { "id": "B", "text": "Statement (2) ALONE is sufficient, but (1) alone is not." },
+        { "id": "C", "text": "BOTH together are sufficient, but NEITHER alone is." },
+        { "id": "D", "text": "EACH statement ALONE is sufficient." },
+        { "id": "E", "text": "Statements (1) and (2) TOGETHER are NOT sufficient." }
+      ],
+      "answer": "C",
+      "explanation": "(1) Primes 20–30 are 23 and 29 — not unique. (2) Many values. Together: of {23, 29}, only 23 = 24 − 1 is one less than a multiple of 6 → unique. Answer: C."
+    },
+    {
+      "id": "q7",
+      "type": "two-part",
+      "category": "Two-Part Analysis",
+      "difficulty": "medium",
+      "prompt": "A company's monthly profit is given by $P = 40u - 1200$, where $u$ is the number of units sold. In the table, select the number of units at which the company breaks even (profit = 0), and the number of units that yields a profit of \\$800. Make one selection per column.",
+      "columnLabels": ["Break even", "Profit = $800"],
+      "rows": [
+        { "id": "A", "text": "20" },
+        { "id": "B", "text": "30" },
+        { "id": "C", "text": "40" },
+        { "id": "D", "text": "50" }
+      ],
+      "answer": "B,D",
+      "explanation": "Break even: $40u - 1200 = 0 \\Rightarrow u = 30$. Profit \\$800: $40u - 1200 = 800 \\Rightarrow 40u = 2000 \\Rightarrow u = 50$."
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "id": "gmat-verbal",
+  "title": "GMAT Verbal",
+  "exam": "GMAT",
+  "section": "Verbal (Critical Reasoning & Reading)",
+  "description": "GMAT Focus Verbal: Critical Reasoning and Reading Comprehension across difficulty levels (no Sentence Correction).",
+  "timeLimitSec": 1200,
+  "questions": [
+    {
+      "id": "q1",
+      "category": "Critical Reasoning",
+      "difficulty": "medium",
+      "passage": "A city installed cameras at its busiest intersections and the number of reported accidents at those intersections fell by 30% the following year. The mayor concluded that the cameras caused drivers to behave more safely.",
+      "prompt": "Which of the following, if true, most weakens the mayor's conclusion?",
+      "choices": [
+        { "id": "A", "text": "The cameras were expensive to install and maintain." },
+        { "id": "B", "text": "In the same year, the city also lowered the speed limit and added traffic lights at those intersections." },
+        { "id": "C", "text": "Drivers reported feeling more cautious near the cameras." },
+        { "id": "D", "text": "Accident rates rose slightly at intersections without cameras." }
+      ],
+      "answer": "B",
+      "explanation": "If other safety changes happened at the same intersections at the same time, the drop can't be attributed to the cameras alone — an alternative cause undermines the causal claim."
+    },
+    {
+      "id": "q2",
+      "category": "Critical Reasoning",
+      "difficulty": "medium",
+      "passage": "A company claims its new keyboard reduces typing errors. In a study, employees using the keyboard made 15% fewer errors than a separate group using standard keyboards.",
+      "prompt": "The argument depends on which assumption?",
+      "choices": [
+        { "id": "A", "text": "The two groups were comparable in typing skill before the study." },
+        { "id": "B", "text": "The new keyboard is more expensive than standard keyboards." },
+        { "id": "C", "text": "All employees prefer the new keyboard." },
+        { "id": "D", "text": "Typing speed also improved with the new keyboard." }
+      ],
+      "answer": "A",
+      "explanation": "If the groups differed in baseline skill, the error difference could be due to the people, not the keyboard. Comparability is a necessary assumption."
+    },
+    {
+      "id": "q3",
+      "category": "Critical Reasoning",
+      "difficulty": "medium",
+      "passage": "Bookstore sales have declined for five straight years. The owner plans to reverse this by adding a café, reasoning that customers who stay longer buy more books.",
+      "prompt": "Which of the following, if true, most strengthens the plan?",
+      "choices": [
+        { "id": "A", "text": "Cafés require additional staff to operate." },
+        { "id": "B", "text": "At similar stores, adding a café increased browsing time and raised book sales." },
+        { "id": "C", "text": "Many customers already bring their own coffee." },
+        { "id": "D", "text": "The café would occupy space currently used for storage." }
+      ],
+      "answer": "B",
+      "explanation": "Evidence that the same intervention produced the intended effect at comparable stores directly supports the plan."
+    },
+    {
+      "id": "q4",
+      "category": "Reading Comprehension",
+      "difficulty": "medium",
+      "passage": "Coral reefs occupy less than one percent of the ocean floor, yet they support roughly a quarter of all marine species. This disproportion has long puzzled ecologists, who note that the surrounding tropical waters are remarkably nutrient-poor. The prevailing explanation is that reefs recycle nutrients with extraordinary efficiency: symbiotic algae living within coral tissue capture and return nutrients that would otherwise be lost, allowing the ecosystem to sustain a density of life far beyond what its waters would seem to permit.",
+      "prompt": "The passage primarily serves to:",
+      "choices": [
+        { "id": "A", "text": "describe how coral reefs were first discovered" },
+        { "id": "B", "text": "explain an apparent paradox and the leading account of it" },
+        { "id": "C", "text": "argue that reefs should be protected from pollution" },
+        { "id": "D", "text": "compare tropical and temperate marine ecosystems" }
+      ],
+      "answer": "B",
+      "explanation": "The passage poses a puzzle (high biodiversity despite nutrient-poor waters) and gives the prevailing explanation (efficient nutrient recycling)."
+    },
+    {
+      "id": "q5",
+      "category": "Reading Comprehension",
+      "difficulty": "easy",
+      "passage": "Coral reefs occupy less than one percent of the ocean floor, yet they support roughly a quarter of all marine species. The prevailing explanation is that reefs recycle nutrients efficiently: symbiotic algae living within coral tissue capture and return nutrients that would otherwise be lost.",
+      "prompt": "According to the passage, the symbiotic algae contribute to reef life chiefly by:",
+      "choices": [
+        { "id": "A", "text": "producing more offspring than other marine organisms" },
+        { "id": "B", "text": "filtering pollutants out of tropical waters" },
+        { "id": "C", "text": "retaining nutrients that would otherwise be lost" },
+        { "id": "D", "text": "expanding the physical area covered by reefs" }
+      ],
+      "answer": "C",
+      "explanation": "The passage states the algae \"capture and return nutrients that would otherwise be lost,\" which sustains the dense ecosystem."
+    },
+    {
+      "id": "q6",
+      "category": "Critical Reasoning",
+      "difficulty": "hard",
+      "passage": "Every winter, the ski resort runs at a loss in months when snowfall is below average. Last winter, snowfall was below average every month, yet the resort turned its first-ever winter profit.",
+      "prompt": "Which of the following, if true, best explains the apparent discrepancy?",
+      "choices": [
+        { "id": "A", "text": "The resort raised its lift-ticket prices and added a popular indoor snow-making facility that operates regardless of natural snowfall." },
+        { "id": "B", "text": "Several nearby resorts also reported below-average snowfall." },
+        { "id": "C", "text": "The resort's summer operations are usually profitable." },
+        { "id": "D", "text": "Snowfall is difficult to predict in advance." }
+      ],
+      "answer": "A",
+      "explanation": "A resolve-the-paradox question: snow-making plus higher prices lets the resort earn a profit despite low natural snowfall, explaining the discrepancy."
+    },
+    {
+      "id": "q7",
+      "category": "Critical Reasoning",
+      "difficulty": "hard",
+      "passage": "Editorial: Our town should ban gas-powered leaf blowers. They are noisy, and noise pollution harms residents' health.",
+      "prompt": "The argument is most vulnerable to the criticism that it:",
+      "choices": [
+        { "id": "A", "text": "assumes without evidence that a ban is the only way to reduce noise from leaf blowers" },
+        { "id": "B", "text": "provides statistics about air pollution" },
+        { "id": "C", "text": "relies on the testimony of experts" },
+        { "id": "D", "text": "concedes that leaf blowers are useful" }
+      ],
+      "answer": "A",
+      "explanation": "The argument leaps from \"noise is harmful\" to \"ban them\" without ruling out alternatives (e.g., quieter models or time-of-day limits) — an unsupported assumption that a ban is necessary."
+    },
+    {
+      "id": "q8",
+      "category": "Reading Comprehension",
+      "difficulty": "medium",
+      "passage": "In the early twentieth century, jazz spread from New Orleans up the Mississippi to Chicago and beyond. Historians once attributed this migration solely to the 1917 closure of the Storyville entertainment district, which left many musicians unemployed. More recent scholarship, however, emphasizes the broader Great Migration of Black Americans seeking industrial jobs in the North, of which musicians were only one part.",
+      "prompt": "The passage suggests that recent scholarship differs from the older view primarily by:",
+      "choices": [
+        { "id": "A", "text": "denying that jazz originated in New Orleans" },
+        { "id": "B", "text": "attributing the spread of jazz to a broader social movement rather than a single event" },
+        { "id": "C", "text": "arguing that Storyville never closed" },
+        { "id": "D", "text": "claiming that jazz did not reach Chicago" }
+      ],
+      "answer": "B",
+      "explanation": "The older view cited one cause (Storyville's closure); recent scholarship situates the spread within the broader Great Migration — a shift from single-event to social-movement explanation."
+    },
+    {
+      "id": "q9",
+      "category": "Critical Reasoning",
+      "difficulty": "easy",
+      "passage": "All registered members of the club receive a monthly newsletter. Priya received this month's newsletter.",
+      "prompt": "Which conclusion is best supported, assuming the statements are true?",
+      "choices": [
+        { "id": "A", "text": "Priya is the only person who received the newsletter." },
+        { "id": "B", "text": "If the mailing list is accurate, Priya is a registered member." },
+        { "id": "C", "text": "Priya wrote part of the newsletter." },
+        { "id": "D", "text": "Non-members never receive any club mail." }
+      ],
+      "answer": "B",
+      "explanation": "Members all receive it; receiving it is consistent with membership. Of the options, only B is a cautious, supported inference (note the qualifier). The others overstate what the premises guarantee."
+    },
+    {
+      "id": "q10",
+      "category": "Critical Reasoning",
+      "difficulty": "hard",
+      "passage": "Company analysts argue that because online ad spending rose 40% the same year sales rose 12%, the ads drove the sales increase. However, the company also cut prices and launched a redesigned product that year.",
+      "prompt": "Which of the following would be most useful to evaluate the analysts' argument?",
+      "choices": [
+        { "id": "A", "text": "Whether competitors also advertised online that year" },
+        { "id": "B", "text": "How sales changed among customers who were not exposed to the online ads" },
+        { "id": "C", "text": "The total dollar amount spent on the ad campaign" },
+        { "id": "D", "text": "Whether the ads won any industry awards" }
+      ],
+      "answer": "B",
+      "explanation": "To isolate the ads' effect from the price cut and redesign, compare sales among customers who did vs. did not see the ads — an evaluate-the-argument question targeting the confound."
+    }
+  ]
+}

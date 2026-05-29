@@ -1,0 +1,26 @@
+{
+  "id": "gmat-focus",
+  "title": "GMAT Focus — Full-Length Mock",
+  "exam": "GMAT",
+  "description": "A full-length practice exam in the GMAT Focus Edition structure: three 45-minute sections taken in order, scored on the official 205–805 scale (estimated).",
+  "sections": [
+    {
+      "id": "gmat-quant",
+      "title": "Quantitative",
+      "file": "/data/gmat-quant.json",
+      "timeLimitSec": 2700
+    },
+    {
+      "id": "gmat-verbal",
+      "title": "Verbal",
+      "file": "/data/gmat-verbal.json",
+      "timeLimitSec": 2700
+    },
+    {
+      "id": "gmat-data-insights",
+      "title": "Data Insights",
+      "file": "/data/gmat-data-insights.json",
+      "timeLimitSec": 2700
+    }
+  ]
+}

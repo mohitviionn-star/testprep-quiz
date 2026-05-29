@@ -1,0 +1,71 @@
+{
+  "quizzes": [
+    {
+      "id": "gmat-quant",
+      "title": "GMAT Quantitative",
+      "exam": "GMAT",
+      "section": "Quantitative (Problem Solving)",
+      "description": "GMAT Focus Quant — Problem Solving: algebra, arithmetic, number properties, and word problems.",
+      "file": "/data/gmat-quant.json",
+      "count": 16,
+      "timeLimitSec": 1200
+    },
+    {
+      "id": "gmat-verbal",
+      "title": "GMAT Verbal",
+      "exam": "GMAT",
+      "section": "Verbal (CR & Reading)",
+      "description": "GMAT Focus Verbal — Critical Reasoning and Reading Comprehension (no Sentence Correction).",
+      "file": "/data/gmat-verbal.json",
+      "count": 10,
+      "timeLimitSec": 1200
+    },
+    {
+      "id": "gmat-data-insights",
+      "title": "GMAT Data Insights",
+      "exam": "GMAT",
+      "section": "Data Insights",
+      "description": "Data Sufficiency, Two-Part Analysis, Graphics Interpretation, Table Analysis, and Multi-Source Reasoning.",
+      "file": "/data/gmat-data-insights.json",
+      "count": 7,
+      "timeLimitSec": 720
+    },
+    {
+      "id": "gre-verbal",
+      "title": "GRE Verbal Reasoning",
+      "exam": "GRE",
+      "section": "Text Completion & Reading",
+      "description": "Vocabulary in context, sentence logic, and reading comprehension passages.",
+      "file": "/data/gre-verbal.json",
+      "count": 5
+    },
+    {
+      "id": "gre-quant",
+      "title": "GRE Quantitative",
+      "exam": "GRE",
+      "section": "Quantitative Comparison",
+      "description": "Compare two quantities and problem-solving with arithmetic, algebra, and data.",
+      "file": "/data/gre-quant.json",
+      "count": 5
+    },
+    {
+      "id": "sat-math",
+      "title": "SAT Math",
+      "exam": "SAT",
+      "section": "Heart of Algebra & Geometry",
+      "description": "Linear equations, functions, and geometry — including diagram-based questions.",
+      "file": "/data/sat-math.json",
+      "count": 6,
+      "timeLimitSec": 600
+    },
+    {
+      "id": "sat-reading",
+      "title": "SAT Reading & Writing",
+      "exam": "SAT",
+      "section": "Reading & Writing",
+      "description": "Reading comprehension, grammar, and effective expression.",
+      "file": "/data/sat-reading.json",
+      "count": 4
+    }
+  ]
+}

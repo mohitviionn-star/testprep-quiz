@@ -1,0 +1,58 @@
+{
+  "id": "sat-reading",
+  "title": "SAT Reading & Writing",
+  "exam": "SAT",
+  "section": "Reading & Writing",
+  "description": "Reading comprehension, grammar, and effective expression.",
+  "questions": [
+    {
+      "id": "q1",
+      "passage": "The octopus is among the most intelligent invertebrates. In laboratory settings, octopuses have learned to open jars, navigate mazes, and even recognize individual human handlers — feats once thought to require a backboned brain.",
+      "prompt": "The main purpose of the passage is to:",
+      "choices": [
+        { "id": "A", "text": "explain how octopuses open jars" },
+        { "id": "B", "text": "highlight the surprising intelligence of octopuses" },
+        { "id": "C", "text": "argue that octopuses should not be kept in labs" },
+        { "id": "D", "text": "compare octopuses with vertebrates" }
+      ],
+      "answer": "B",
+      "explanation": "The passage lists cognitive feats to emphasize that octopuses are surprisingly intelligent for invertebrates."
+    },
+    {
+      "id": "q2",
+      "prompt": "Choose the option that makes the sentence grammatically correct: \"Each of the students ______ responsible for their own project.\"",
+      "choices": [
+        { "id": "A", "text": "are" },
+        { "id": "B", "text": "is" },
+        { "id": "C", "text": "were" },
+        { "id": "D", "text": "be" }
+      ],
+      "answer": "B",
+      "explanation": "\"Each\" is singular, so it takes the singular verb \"is.\""
+    },
+    {
+      "id": "q3",
+      "prompt": "Which choice best combines the sentences? \"The experiment failed. The researchers learned a great deal from it.\"",
+      "choices": [
+        { "id": "A", "text": "The experiment failed, the researchers learned a great deal from it." },
+        { "id": "B", "text": "The experiment failed, but the researchers learned a great deal from it." },
+        { "id": "C", "text": "The experiment failed the researchers learned a great deal from it." },
+        { "id": "D", "text": "The experiment failed; and the researchers learned a great deal from it." }
+      ],
+      "answer": "B",
+      "explanation": "A comma plus the coordinating conjunction \"but\" correctly joins two independent clauses and signals contrast. Option A is a comma splice."
+    },
+    {
+      "id": "q4",
+      "prompt": "Select the most concise version: ",
+      "choices": [
+        { "id": "A", "text": "Due to the fact that it was raining, we stayed inside." },
+        { "id": "B", "text": "Because it was raining, we stayed inside." },
+        { "id": "C", "text": "On account of the rain that was falling, we stayed inside." },
+        { "id": "D", "text": "It was raining, and for that reason we stayed inside." }
+      ],
+      "answer": "B",
+      "explanation": "\"Because\" conveys the same cause-and-effect meaning most concisely."
+    }
+  ]
+}

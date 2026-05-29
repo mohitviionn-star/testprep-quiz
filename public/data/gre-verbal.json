@@ -1,0 +1,71 @@
+{
+  "id": "gre-verbal",
+  "title": "GRE Verbal Reasoning",
+  "exam": "GRE",
+  "section": "Text Completion & Reading",
+  "description": "Vocabulary in context, sentence logic, and reading comprehension.",
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Although the critics found the novel ______, readers embraced its sprawling, unhurried storytelling.",
+      "choices": [
+        { "id": "A", "text": "engaging" },
+        { "id": "B", "text": "tedious" },
+        { "id": "C", "text": "concise" },
+        { "id": "D", "text": "innovative" }
+      ],
+      "answer": "B",
+      "explanation": "\"Although\" signals contrast: critics disliked it while readers embraced it, so the blank must be negative — \"tedious.\""
+    },
+    {
+      "id": "q2",
+      "prompt": "Select the word that most nearly means 'to make worse':",
+      "choices": [
+        { "id": "A", "text": "Alleviate" },
+        { "id": "B", "text": "Exacerbate" },
+        { "id": "C", "text": "Mitigate" },
+        { "id": "D", "text": "Ameliorate" }
+      ],
+      "answer": "B",
+      "explanation": "Exacerbate means to make a problem worse. The others all mean to ease or improve."
+    },
+    {
+      "id": "q3",
+      "passage": "Coral reefs occupy less than one percent of the ocean floor, yet they support roughly a quarter of all marine species. This disproportion has long puzzled ecologists, who note that the surrounding tropical waters are remarkably nutrient-poor. The prevailing explanation is that reefs recycle nutrients with extraordinary efficiency: symbiotic algae living within coral tissue capture and return nutrients that would otherwise be lost, allowing the ecosystem to sustain a density of life far beyond what its waters would seem to permit.",
+      "prompt": "The passage primarily serves to:",
+      "choices": [
+        { "id": "A", "text": "describe how coral reefs were first discovered" },
+        { "id": "B", "text": "explain an apparent paradox and the leading account of it" },
+        { "id": "C", "text": "argue that reefs should be protected from pollution" },
+        { "id": "D", "text": "compare tropical and temperate marine ecosystems" }
+      ],
+      "answer": "B",
+      "explanation": "The passage poses a puzzle (high biodiversity despite nutrient-poor waters) and then gives the prevailing explanation (efficient nutrient recycling). That is describing a paradox and its leading account."
+    },
+    {
+      "id": "q4",
+      "passage": "Coral reefs occupy less than one percent of the ocean floor, yet they support roughly a quarter of all marine species. This disproportion has long puzzled ecologists, who note that the surrounding tropical waters are remarkably nutrient-poor. The prevailing explanation is that reefs recycle nutrients with extraordinary efficiency: symbiotic algae living within coral tissue capture and return nutrients that would otherwise be lost, allowing the ecosystem to sustain a density of life far beyond what its waters would seem to permit.",
+      "prompt": "According to the passage, the symbiotic algae contribute to reef life chiefly by:",
+      "choices": [
+        { "id": "A", "text": "producing more offspring than other marine organisms" },
+        { "id": "B", "text": "filtering pollutants out of tropical waters" },
+        { "id": "C", "text": "retaining nutrients that would otherwise be lost" },
+        { "id": "D", "text": "expanding the physical area covered by reefs" }
+      ],
+      "answer": "C",
+      "explanation": "The passage states the algae \"capture and return nutrients that would otherwise be lost,\" which is the mechanism for sustaining the dense ecosystem."
+    },
+    {
+      "id": "q5",
+      "prompt": "Her argument was so ______ that even her opponents conceded its logic.",
+      "choices": [
+        { "id": "A", "text": "specious" },
+        { "id": "B", "text": "cogent" },
+        { "id": "C", "text": "convoluted" },
+        { "id": "D", "text": "dubious" }
+      ],
+      "answer": "B",
+      "explanation": "If opponents conceded its logic, the argument was clear and convincing — \"cogent.\""
+    }
+  ]
+}

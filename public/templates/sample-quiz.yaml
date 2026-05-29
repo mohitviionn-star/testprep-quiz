@@ -1,0 +1,30 @@
+# Sample quiz template (YAML)
+# Save as .yaml or .yml and upload it on the Upload page.
+title: Sample Custom Quiz
+exam: GMAT          # GMAT | GRE | SAT | anything you like
+section: Data Sufficiency
+description: A short example showing the YAML format.
+
+questions:
+  # Math is written with $...$ (inline) or $$...$$ (block).
+  - prompt: If $x + 4 = 9$, what is $x$?
+    choices:
+      - "3"
+      - "5"
+      - "9"
+      - "13"
+    answer: B           # letter (A/B/C/D), the option text, or its number (2)
+    explanation: $x + 4 = 9$ means $x = 5$.
+
+  # 'image' adds a diagram (a URL, or a path under /public). 'passage' adds
+  # shared reading text shown above the question.
+  - prompt: In the triangle shown, what is the hypotenuse $c$?
+    image: https://upload.wikimedia.org/wikipedia/commons/d/d2/Pythagorean.svg
+    imageAlt: Right triangle with legs 3 and 4
+    choices:
+      A: $5$
+      B: $6$
+      C: $7$
+      D: $25$
+    answer: A
+    explanation: $c=\sqrt{3^2+4^2}=5$.

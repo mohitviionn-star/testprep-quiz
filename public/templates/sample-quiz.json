@@ -1,0 +1,43 @@
+{
+  "title": "Sample Custom Quiz",
+  "exam": "GRE",
+  "section": "Quantitative Comparison",
+  "description": "A short example showing the JSON format, including math and diagrams.",
+  "timeLimit": 10,
+  "questions": [
+    {
+      "prompt": "If $x + 4 = 9$, what is $x$?",
+      "choices": ["3", "5", "9", "13"],
+      "answer": "B",
+      "explanation": "$x + 4 = 9$ means $x = 5$."
+    },
+    {
+      "type": "numeric",
+      "prompt": "Numeric entry: If $4x - 9 = 23$, what is $x$?",
+      "choices": [],
+      "answer": "8",
+      "tolerance": 0.001,
+      "explanation": "$4x = 32$, so $x = 8$."
+    },
+    {
+      "prompt": "In the right triangle shown, what is the hypotenuse $c$?",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Pythagorean.svg",
+      "imageAlt": "Right triangle with legs 3 and 4",
+      "choices": [
+        { "id": "A", "text": "$5$" },
+        { "id": "B", "text": "$6$" },
+        { "id": "C", "text": "$7$" },
+        { "id": "D", "text": "$25$" }
+      ],
+      "answer": "A",
+      "explanation": "$c=\\sqrt{3^2+4^2}=5$. Math is written with $...$ (inline) or $$...$$ (block)."
+    },
+    {
+      "passage": "Paste any reading passage here. It appears above the question so several questions can share one passage.",
+      "prompt": "A question that refers to the passage above.",
+      "choices": ["Option one", "Option two", "Option three", "Option four"],
+      "answer": 1,
+      "explanation": "The 'answer' may be a letter (A), the option text, or its number (1)."
+    }
+  ]
+}

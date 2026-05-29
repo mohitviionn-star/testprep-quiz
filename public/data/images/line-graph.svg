@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260" width="300" height="260" font-family="system-ui, sans-serif">
+  <!-- grid -->
+  <g stroke="#e2e8f0" stroke-width="1">
+    <line x1="40" y1="20" x2="40" y2="220"/>
+    <line x1="90" y1="20" x2="90" y2="220"/>
+    <line x1="140" y1="20" x2="140" y2="220"/>
+    <line x1="190" y1="20" x2="190" y2="220"/>
+    <line x1="240" y1="20" x2="240" y2="220"/>
+    <line x1="40" y1="20" x2="240" y2="20"/>
+    <line x1="40" y1="70" x2="240" y2="70"/>
+    <line x1="40" y1="120" x2="240" y2="120"/>
+    <line x1="40" y1="170" x2="240" y2="170"/>
+    <line x1="40" y1="220" x2="240" y2="220"/>
+  </g>
+  <!-- axes -->
+  <line x1="40" y1="20" x2="40" y2="230" stroke="#0f172a" stroke-width="2"/>
+  <line x1="32" y1="220" x2="250" y2="220" stroke="#0f172a" stroke-width="2"/>
+  <!-- line through (0,1) and (2,5): y = 2x + 1, drawn on grid where x-step=50px=1 unit, y-step=50px=1 unit, origin at (40,220) -->
+  <line x1="40" y1="170" x2="190" y2="20" stroke="#1f41f5" stroke-width="3"/>
+  <!-- points -->
+  <circle cx="40" cy="170" r="4" fill="#1f41f5"/>
+  <circle cx="140" cy="70" r="4" fill="#1f41f5"/>
+  <text x="55" y="165" font-size="13" fill="#0f172a">(0, 1)</text>
+  <text x="150" y="65" font-size="13" fill="#0f172a">(2, 5)</text>
+  <text x="245" y="235" font-size="13" fill="#0f172a">x</text>
+  <text x="22" y="28" font-size="13" fill="#0f172a">y</text>
+</svg>
