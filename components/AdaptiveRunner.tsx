@@ -7,12 +7,12 @@ import { addAttempt } from "@/lib/storage";
 import { hasAnswer, isCorrect, type AnswerValue } from "@/lib/scoring";
 import {
   abilityLevel,
-  abilityToSectionScore,
   adaptiveLength,
   difficultyValue,
   pickNext,
   updateAbility,
 } from "@/lib/adaptive";
+import { abilityScaled } from "@/lib/scoring";
 import QuestionView from "@/components/QuestionView";
 import ReviewList from "@/components/ReviewList";
 
@@ -62,7 +62,7 @@ export default function AdaptiveRunner({ quiz }: { quiz: Quiz }) {
   function finalize(allServed: Served[], finalTheta: number) {
     const correct = allServed.filter((s) => s.correct).length;
     const total = allServed.length;
-    const isGmat = quiz.exam.toUpperCase() === "GMAT";
+    const scaled = abilityScaled(quiz.exam, finalTheta);
     addAttempt({
       quizId: `${quiz.id}-adaptive`,
       title: `${quiz.title} (Adaptive)`,
@@ -72,8 +72,8 @@ export default function AdaptiveRunner({ quiz }: { quiz: Quiz }) {
       total,
       takenAt: new Date().toISOString(),
       durationSec: 0,
-      scaledScore: isGmat ? abilityToSectionScore(finalTheta) : undefined,
-      scaleLabel: isGmat ? "GMAT adaptive (60–90)" : undefined,
+      scaledScore: scaled?.value,
+      scaleLabel: scaled ? `${scaled.label} · adaptive` : undefined,
     });
     setServed(allServed);
     setTheta(finalTheta);
@@ -107,9 +107,8 @@ export default function AdaptiveRunner({ quiz }: { quiz: Quiz }) {
     const correct = served.filter((s) => s.correct).length;
     const total = served.length;
     const pct = total ? Math.round((correct / total) * 100) : 0;
-    const isGmat = quiz.exam.toUpperCase() === "GMAT";
     const level = abilityLevel(theta);
-    const sectionScore = abilityToSectionScore(theta);
+    const scaled = abilityScaled(quiz.exam, theta);
     const reviewQs = served.map((s) => pool.find((q) => q.id === s.id)!).filter(Boolean);
     const answers = Object.fromEntries(served.map((s) => [s.id, s.given])) as Record<string, AnswerValue>;
 
@@ -121,7 +120,7 @@ export default function AdaptiveRunner({ quiz }: { quiz: Quiz }) {
               ⚡ Adaptive · {quiz.section}
             </p>
             <div className="mt-2 text-3xl font-black">{level}</div>
-            {isGmat && <p className="mt-1 text-white/90">Estimated GMAT level ≈ {sectionScore}/90</p>}
+            {scaled && <p className="mt-1 text-white/90">Estimated {scaled.label} ≈ {scaled.value}</p>}
             <p className="mt-1 text-sm text-white/80">
               {correct}/{total} correct · {pct}%
             </p>

@@ -2,12 +2,14 @@
   "id": "sat-math",
   "title": "SAT Math",
   "exam": "SAT",
-  "section": "Heart of Algebra & Geometry",
-  "description": "Linear equations, functions, and geometry — including diagram-based questions.",
-  "timeLimitSec": 600,
+  "section": "Math",
+  "description": "Digital SAT Math: algebra, advanced math, problem solving, and geometry — multiple choice and student-produced response (grid-in), across difficulty levels.",
+  "timeLimitSec": 1500,
   "questions": [
     {
       "id": "q1",
+      "category": "Geometry",
+      "difficulty": "medium",
       "prompt": "In the right triangle shown, what is the length of the hypotenuse $c$?",
       "image": "/data/images/right-triangle.svg",
       "imageAlt": "Right triangle with legs of length 6 and 8 and hypotenuse c",
@@ -18,24 +20,28 @@
         { "id": "D", "text": "$\\sqrt{100}+2$" }
       ],
       "answer": "A",
-      "explanation": "By the Pythagorean theorem, $c=\\sqrt{6^2+8^2}=\\sqrt{36+64}=\\sqrt{100}=10$."
+      "explanation": "By the Pythagorean theorem, $c=\\sqrt{6^2+8^2}=\\sqrt{100}=10$."
     },
     {
       "id": "q2",
-      "prompt": "The graph shows a line in the $xy$-plane passing through the marked points. What is the equation of the line?",
+      "category": "Algebra",
+      "difficulty": "medium",
+      "prompt": "The graph shows a line through the marked points. What is its equation?",
       "image": "/data/images/line-graph.svg",
       "imageAlt": "Line through the points (0, 1) and (2, 5) on a coordinate grid",
       "choices": [
         { "id": "A", "text": "$y = x + 1$" },
         { "id": "B", "text": "$y = 2x + 1$" },
         { "id": "C", "text": "$y = 2x - 1$" },
-        { "id": "D", "text": "$y = \\tfrac{1}{2}x + 1$" }
+        { "id": "D", "text": "$y = \\tfrac12 x + 1$" }
       ],
       "answer": "B",
       "explanation": "Slope $=\\dfrac{5-1}{2-0}=2$ and the $y$-intercept is $1$, so $y=2x+1$."
     },
     {
       "id": "q3",
+      "category": "Algebra",
+      "difficulty": "easy",
       "prompt": "If $\\dfrac{x}{3} + 4 = 9$, what is the value of $x$?",
       "choices": [
         { "id": "A", "text": "$9$" },
@@ -48,6 +54,8 @@
     },
     {
       "id": "q4",
+      "category": "Algebra",
+      "difficulty": "easy",
       "prompt": "If $f(x) = 3x - 4$, what is $f(6)$?",
       "choices": [
         { "id": "A", "text": "$10$" },
@@ -56,10 +64,12 @@
         { "id": "D", "text": "$22$" }
       ],
       "answer": "B",
-      "explanation": "$f(6)=3(6)-4=18-4=14$."
+      "explanation": "$f(6)=3(6)-4=14$."
     },
     {
       "id": "q5",
+      "category": "Advanced Math",
+      "difficulty": "medium",
       "prompt": "Which of the following is equivalent to $(x+3)(x-5)$?",
       "choices": [
         { "id": "A", "text": "$x^2 - 2x - 15$" },
@@ -73,10 +83,88 @@
     {
       "id": "q6",
       "type": "numeric",
+      "category": "Algebra",
+      "difficulty": "easy",
       "prompt": "Grid-in: If $4x - 9 = 23$, what is the value of $x$?",
       "choices": [],
       "answer": "8",
-      "explanation": "$4x = 32$, so $x = 8$. Grid-in questions require typing the exact value — no answer choices."
+      "explanation": "$4x = 32$, so $x = 8$."
+    },
+    {
+      "id": "q7",
+      "category": "Problem Solving",
+      "difficulty": "easy",
+      "prompt": "The ratio of boys to girls in a class is $3:5$. If there are $24$ students, how many are girls?",
+      "choices": [
+        { "id": "A", "text": "$9$" },
+        { "id": "B", "text": "$12$" },
+        { "id": "C", "text": "$15$" },
+        { "id": "D", "text": "$18$" }
+      ],
+      "answer": "C",
+      "explanation": "$3+5=8$ parts; each part $=24/8=3$. Girls $=5\\times3=15$."
+    },
+    {
+      "id": "q8",
+      "category": "Problem Solving",
+      "difficulty": "medium",
+      "prompt": "A shirt's price is increased from \\$40 to \\$50. What is the percent increase?",
+      "choices": [
+        { "id": "A", "text": "$10\\%$" },
+        { "id": "B", "text": "$20\\%$" },
+        { "id": "C", "text": "$25\\%$" },
+        { "id": "D", "text": "$80\\%$" }
+      ],
+      "answer": "C",
+      "explanation": "Increase $=\\dfrac{50-40}{40}=\\dfrac{10}{40}=25\\%$."
+    },
+    {
+      "id": "q9",
+      "type": "numeric",
+      "category": "Algebra",
+      "difficulty": "medium",
+      "prompt": "Grid-in: If $3(x + 2) = 21$, what is the value of $x$?",
+      "choices": [],
+      "answer": "5",
+      "explanation": "$x + 2 = 7$, so $x = 5$."
+    },
+    {
+      "id": "q10",
+      "category": "Advanced Math",
+      "difficulty": "hard",
+      "prompt": "If $x^2 = 49$ and $x < 0$, what is the value of $x$?",
+      "choices": [
+        { "id": "A", "text": "$-7$" },
+        { "id": "B", "text": "$7$" },
+        { "id": "C", "text": "$\\pm 7$" },
+        { "id": "D", "text": "$-49$" }
+      ],
+      "answer": "A",
+      "explanation": "$x = \\pm 7$, but the constraint $x < 0$ selects $x = -7$."
+    },
+    {
+      "id": "q11",
+      "category": "Geometry",
+      "difficulty": "hard",
+      "prompt": "A circle has area $16\\pi$. What is its radius?",
+      "choices": [
+        { "id": "A", "text": "$4$" },
+        { "id": "B", "text": "$8$" },
+        { "id": "C", "text": "$16$" },
+        { "id": "D", "text": "$32$" }
+      ],
+      "answer": "A",
+      "explanation": "$\\pi r^2 = 16\\pi \\Rightarrow r^2 = 16 \\Rightarrow r = 4$."
+    },
+    {
+      "id": "q12",
+      "type": "numeric",
+      "category": "Algebra",
+      "difficulty": "hard",
+      "prompt": "Grid-in: The line $y = mx + 2$ passes through the point $(3, 11)$. What is the value of $m$?",
+      "choices": [],
+      "answer": "3",
+      "explanation": "$11 = 3m + 2 \\Rightarrow 3m = 9 \\Rightarrow m = 3$."
     }
   ]
 }

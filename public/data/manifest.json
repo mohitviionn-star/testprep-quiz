@@ -34,38 +34,41 @@
       "id": "gre-verbal",
       "title": "GRE Verbal Reasoning",
       "exam": "GRE",
-      "section": "Text Completion & Reading",
-      "description": "Vocabulary in context, sentence logic, and reading comprehension passages.",
+      "section": "Verbal Reasoning",
+      "description": "Text Completion, vocabulary in context, and Reading Comprehension across difficulty levels.",
       "file": "/data/gre-verbal.json",
-      "count": 5
+      "count": 10,
+      "timeLimitSec": 1080
     },
     {
       "id": "gre-quant",
-      "title": "GRE Quantitative",
+      "title": "GRE Quantitative Reasoning",
       "exam": "GRE",
-      "section": "Quantitative Comparison",
-      "description": "Compare two quantities and problem-solving with arithmetic, algebra, and data.",
+      "section": "Quantitative Reasoning",
+      "description": "Quantitative Comparison, Problem Solving, and Numeric Entry across difficulty levels.",
       "file": "/data/gre-quant.json",
-      "count": 5
+      "count": 10,
+      "timeLimitSec": 1260
     },
     {
       "id": "sat-math",
       "title": "SAT Math",
       "exam": "SAT",
-      "section": "Heart of Algebra & Geometry",
-      "description": "Linear equations, functions, and geometry — including diagram-based questions.",
+      "section": "Math",
+      "description": "Algebra, advanced math, problem solving, and geometry — multiple choice and grid-in, across difficulty levels.",
       "file": "/data/sat-math.json",
-      "count": 6,
-      "timeLimitSec": 600
+      "count": 12,
+      "timeLimitSec": 1500
     },
     {
       "id": "sat-reading",
       "title": "SAT Reading & Writing",
       "exam": "SAT",
       "section": "Reading & Writing",
-      "description": "Reading comprehension, grammar, and effective expression.",
+      "description": "Reading comprehension, grammar, and effective expression across difficulty levels.",
       "file": "/data/sat-reading.json",
-      "count": 4
+      "count": 10,
+      "timeLimitSec": 1200
     }
   ]
 }

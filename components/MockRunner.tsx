@@ -6,12 +6,7 @@ import type { Mock, Question, Quiz } from "@/lib/types";
 import { fetchQuizByFile } from "@/lib/data";
 import { addAttempt } from "@/lib/storage";
 import { persistBookmarks } from "@/lib/bookmarks";
-import {
-  countCorrect,
-  gmatSectionScore,
-  gmatTotalScore,
-  type AnswerValue,
-} from "@/lib/scoring";
+import { countCorrect, sectionScaled, totalScaled, type AnswerValue } from "@/lib/scoring";
 import SectionRunner, { type SectionResult } from "@/components/SectionRunner";
 import ReviewList from "@/components/ReviewList";
 import StrengthsWeaknesses from "@/components/StrengthsWeaknesses";
@@ -106,10 +101,10 @@ export default function MockRunner({ mock }: { mock: Mock }) {
   function saveAttempt(all: Done[]) {
     const totalCorrect = all.reduce((s, d) => s + countCorrect(d.section.questions, d.answers), 0);
     const totalQ = all.reduce((s, d) => s + d.section.questions.length, 0);
-    const sectionScores = all.map((d) =>
-      gmatSectionScore(countCorrect(d.section.questions, d.answers), d.section.questions.length)
+    const sectionScores = all.map(
+      (d) => sectionScaled(mock.exam, countCorrect(d.section.questions, d.answers), d.section.questions.length)?.value ?? 0
     );
-    const total = gmatTotalScore(sectionScores);
+    const total = totalScaled(mock.exam, sectionScores);
     const elapsed = all.reduce((s, d) => s + d.elapsedSec, 0);
     addAttempt({
       quizId: mock.id,
@@ -120,8 +115,8 @@ export default function MockRunner({ mock }: { mock: Mock }) {
       total: totalQ,
       takenAt: new Date().toISOString(),
       durationSec: elapsed,
-      scaledScore: total,
-      scaleLabel: "GMAT total (205–805)",
+      scaledScore: total?.value,
+      scaleLabel: total?.label,
     });
   }
 
@@ -227,10 +222,10 @@ export default function MockRunner({ mock }: { mock: Mock }) {
   // ---------- Report ----------
   const allQuestions = done.flatMap((d) => d.section.questions);
   const allAnswers = Object.assign({}, ...done.map((d) => d.answers)) as Record<string, AnswerValue>;
-  const sectionScores = done.map((d) =>
-    gmatSectionScore(countCorrect(d.section.questions, d.answers), d.section.questions.length)
+  const sectionScores = done.map(
+    (d) => sectionScaled(mock.exam, countCorrect(d.section.questions, d.answers), d.section.questions.length)?.value ?? 0
   );
-  const total = gmatTotalScore(sectionScores);
+  const total = totalScaled(mock.exam, sectionScores);
   const elapsed = done.reduce((s, d) => s + d.elapsedSec, 0);
 
   return (
@@ -238,10 +233,10 @@ export default function MockRunner({ mock }: { mock: Mock }) {
       <div className="card overflow-hidden">
         <div className="bg-gradient-to-br from-brand-500 to-brand-700 p-8 text-center text-white">
           <p className="text-sm font-semibold uppercase tracking-wide opacity-80">{mock.title}</p>
-          <div className="mt-2 text-6xl font-black">{total}</div>
-          <p className="mt-1 text-white/90">Estimated GMAT total (205–805)</p>
+          <div className="mt-2 text-6xl font-black">{total?.value ?? "—"}</div>
+          <p className="mt-1 text-white/90">Estimated {total?.label ?? "score"}</p>
           <p className="mt-1 text-xs text-white/70">
-            Estimate on the official scale — not the real CAT algorithm.
+            Estimate on the official scale — not the real scoring algorithm.
           </p>
           <p className="mt-2 text-sm text-white/80">{fmtTime(elapsed)} total</p>
         </div>

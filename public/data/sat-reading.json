@@ -3,10 +3,13 @@
   "title": "SAT Reading & Writing",
   "exam": "SAT",
   "section": "Reading & Writing",
-  "description": "Reading comprehension, grammar, and effective expression.",
+  "description": "Digital SAT Reading & Writing: comprehension, grammar, and effective expression across difficulty levels.",
+  "timeLimitSec": 1200,
   "questions": [
     {
       "id": "q1",
+      "category": "Reading Comprehension",
+      "difficulty": "easy",
       "passage": "The octopus is among the most intelligent invertebrates. In laboratory settings, octopuses have learned to open jars, navigate mazes, and even recognize individual human handlers — feats once thought to require a backboned brain.",
       "prompt": "The main purpose of the passage is to:",
       "choices": [
@@ -20,7 +23,9 @@
     },
     {
       "id": "q2",
-      "prompt": "Choose the option that makes the sentence grammatically correct: \"Each of the students ______ responsible for their own project.\"",
+      "category": "Grammar",
+      "difficulty": "easy",
+      "prompt": "Choose the option that makes the sentence correct: \"Each of the students ______ responsible for their own project.\"",
       "choices": [
         { "id": "A", "text": "are" },
         { "id": "B", "text": "is" },
@@ -32,6 +37,8 @@
     },
     {
       "id": "q3",
+      "category": "Expression",
+      "difficulty": "medium",
       "prompt": "Which choice best combines the sentences? \"The experiment failed. The researchers learned a great deal from it.\"",
       "choices": [
         { "id": "A", "text": "The experiment failed, the researchers learned a great deal from it." },
@@ -44,7 +51,9 @@
     },
     {
       "id": "q4",
-      "prompt": "Select the most concise version: ",
+      "category": "Expression",
+      "difficulty": "easy",
+      "prompt": "Select the most concise version:",
       "choices": [
         { "id": "A", "text": "Due to the fact that it was raining, we stayed inside." },
         { "id": "B", "text": "Because it was raining, we stayed inside." },
@@ -52,7 +61,93 @@
         { "id": "D", "text": "It was raining, and for that reason we stayed inside." }
       ],
       "answer": "B",
-      "explanation": "\"Because\" conveys the same cause-and-effect meaning most concisely."
+      "explanation": "\"Because\" conveys the cause-and-effect meaning most concisely."
+    },
+    {
+      "id": "q5",
+      "category": "Grammar",
+      "difficulty": "medium",
+      "prompt": "Choose the correct word: \"Neither of the boys finished ______ homework.\"",
+      "choices": [
+        { "id": "A", "text": "their" },
+        { "id": "B", "text": "his" },
+        { "id": "C", "text": "they're" },
+        { "id": "D", "text": "them" }
+      ],
+      "answer": "B",
+      "explanation": "\"Neither\" is singular, so it pairs with the singular \"his\" here."
+    },
+    {
+      "id": "q6",
+      "category": "Expression",
+      "difficulty": "medium",
+      "prompt": "Choose the best transition: \"The new policy reduced costs; ______, it angered many employees.\"",
+      "choices": [
+        { "id": "A", "text": "therefore" },
+        { "id": "B", "text": "however" },
+        { "id": "C", "text": "for example" },
+        { "id": "D", "text": "in addition" }
+      ],
+      "answer": "B",
+      "explanation": "The two clauses contrast (a benefit vs. a downside), so the contrasting transition \"however\" fits."
+    },
+    {
+      "id": "q7",
+      "category": "Grammar",
+      "difficulty": "medium",
+      "prompt": "Which sentence is punctuated correctly?",
+      "choices": [
+        { "id": "A", "text": "She brought three things: a map, a compass, and water." },
+        { "id": "B", "text": "She brought three things; a map, a compass, and water." },
+        { "id": "C", "text": "She brought three things, a map, a compass, and water." },
+        { "id": "D", "text": "She brought: three things a map, a compass, and water." }
+      ],
+      "answer": "A",
+      "explanation": "A colon correctly introduces a list after a complete independent clause."
+    },
+    {
+      "id": "q8",
+      "category": "Reading Comprehension",
+      "difficulty": "medium",
+      "passage": "Urban beekeeping has surged in popularity over the past decade. Advocates argue that city hives boost pollination of community gardens. Yet some ecologists caution that a glut of honeybees may crowd out native wild bees, which are often more effective pollinators.",
+      "prompt": "The passage suggests that the ecologists' main concern is that urban beekeeping may:",
+      "choices": [
+        { "id": "A", "text": "reduce honey production in cities" },
+        { "id": "B", "text": "harm native wild bee populations" },
+        { "id": "C", "text": "make community gardens less popular" },
+        { "id": "D", "text": "increase the cost of beekeeping equipment" }
+      ],
+      "answer": "B",
+      "explanation": "The ecologists caution that honeybees \"may crowd out native wild bees\" — concern for native bee populations."
+    },
+    {
+      "id": "q9",
+      "category": "Reading Comprehension",
+      "difficulty": "hard",
+      "passage": "Critics initially dismissed the painter's late works as the careless output of failing eyesight. Recent conservation, however, has revealed deliberate underdrawing beneath the loose brushwork, suggesting that the apparent looseness was a chosen style rather than a symptom of decline.",
+      "prompt": "The passage implies that the recent conservation findings:",
+      "choices": [
+        { "id": "A", "text": "confirm the critics' original assessment" },
+        { "id": "B", "text": "challenge the view that the late style resulted from declining eyesight" },
+        { "id": "C", "text": "prove the painter could no longer see clearly" },
+        { "id": "D", "text": "show the paintings were made by an assistant" }
+      ],
+      "answer": "B",
+      "explanation": "Deliberate underdrawing implies intentional technique, undercutting the claim that the loose style was merely caused by failing eyesight."
+    },
+    {
+      "id": "q10",
+      "category": "Expression",
+      "difficulty": "hard",
+      "prompt": "Which word most precisely completes the sentence? \"The committee's report was so ______ that readers could draw opposite conclusions from the same paragraph.\"",
+      "choices": [
+        { "id": "A", "text": "concise" },
+        { "id": "B", "text": "ambiguous" },
+        { "id": "C", "text": "thorough" },
+        { "id": "D", "text": "persuasive" }
+      ],
+      "answer": "B",
+      "explanation": "If opposite conclusions can be drawn from the same text, it is open to multiple interpretations — \"ambiguous.\""
     }
   ]
 }

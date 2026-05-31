@@ -5,11 +5,7 @@ import Link from "next/link";
 import type { Quiz } from "@/lib/types";
 import { addAttempt } from "@/lib/storage";
 import { persistBookmarks } from "@/lib/bookmarks";
-import {
-  countCorrect,
-  gmatSectionScore,
-  type AnswerValue,
-} from "@/lib/scoring";
+import { countCorrect, sectionScaled, type AnswerValue } from "@/lib/scoring";
 import SectionRunner, { type SectionResult } from "@/components/SectionRunner";
 import ReviewList from "@/components/ReviewList";
 import StrengthsWeaknesses from "@/components/StrengthsWeaknesses";
@@ -25,8 +21,7 @@ export default function QuizRunner({ quiz }: { quiz: Quiz }) {
   function handleFinish(r: SectionResult) {
     const correct = countCorrect(quiz.questions, r.answers);
     const total = quiz.questions.length;
-    const isGmat = quiz.exam.toUpperCase() === "GMAT";
-    const scaled = isGmat ? gmatSectionScore(correct, total) : undefined;
+    const scaled = sectionScaled(quiz.exam, correct, total);
     addAttempt({
       quizId: quiz.id,
       title: quiz.title,
@@ -36,8 +31,8 @@ export default function QuizRunner({ quiz }: { quiz: Quiz }) {
       total,
       takenAt: new Date().toISOString(),
       durationSec: r.elapsedSec,
-      scaledScore: scaled,
-      scaleLabel: scaled != null ? "GMAT section (60–90)" : undefined,
+      scaledScore: scaled?.value,
+      scaleLabel: scaled?.label,
     });
     persistBookmarks({
       quizId: quiz.id,
@@ -66,8 +61,7 @@ export default function QuizRunner({ quiz }: { quiz: Quiz }) {
   const total = quiz.questions.length;
   const correct = countCorrect(quiz.questions, result.answers);
   const pct = total ? Math.round((correct / total) * 100) : 0;
-  const isGmat = quiz.exam.toUpperCase() === "GMAT";
-  const sectionScore = gmatSectionScore(correct, total);
+  const scaled = sectionScaled(quiz.exam, correct, total);
 
   function restart() {
     setResult(null);
@@ -80,14 +74,14 @@ export default function QuizRunner({ quiz }: { quiz: Quiz }) {
           <p className="text-sm font-semibold uppercase tracking-wide opacity-80">
             {quiz.exam} · {quiz.section}
           </p>
-          {isGmat ? (
+          {scaled ? (
             <>
-              <div className="mt-2 text-5xl font-black">{sectionScore}</div>
+              <div className="mt-2 text-5xl font-black">{scaled.value}</div>
               <p className="mt-1 text-white/90">
-                Estimated GMAT section score (60–90) · {correct}/{total} correct · {pct}%
+                Estimated {scaled.label} · {correct}/{total} correct · {pct}%
               </p>
               <p className="mt-1 text-xs text-white/70">
-                Estimate on the official scale — not the real CAT algorithm.
+                Estimate on the official scale — not the real scoring algorithm.
               </p>
             </>
           ) : (

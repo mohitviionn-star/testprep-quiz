@@ -32,6 +32,7 @@ export const EXAMS: ExamInfo[] = [
     tagline: "General Test",
     blurb: "Verbal reasoning, text completion, and quantitative comparison.",
     gradient: "from-violet-600 to-fuchsia-600",
+    mockId: "gre-general",
   },
   {
     code: "SAT",
@@ -40,6 +41,7 @@ export const EXAMS: ExamInfo[] = [
     tagline: "Digital SAT",
     blurb: "Heart of algebra, geometry, reading, and writing & language.",
     gradient: "from-emerald-600 to-teal-600",
+    mockId: "sat-digital",
   },
 ];
 

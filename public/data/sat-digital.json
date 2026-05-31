@@ -1,0 +1,20 @@
+{
+  "id": "sat-digital",
+  "title": "Digital SAT — Full-Length Mock",
+  "exam": "SAT",
+  "description": "A full-length practice exam in the Digital SAT structure: Reading & Writing and Math, scored on the official 200–800 per-section scale (estimated, 400–1600 total).",
+  "sections": [
+    {
+      "id": "sat-reading",
+      "title": "Reading & Writing",
+      "file": "/data/sat-reading.json",
+      "timeLimitSec": 1920
+    },
+    {
+      "id": "sat-math",
+      "title": "Math",
+      "file": "/data/sat-math.json",
+      "timeLimitSec": 2100
+    }
+  ]
+}
