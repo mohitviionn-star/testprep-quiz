@@ -11,6 +11,7 @@ export type Choice = {
 /**
  * Supported question formats:
  * - "mcq"            single-answer multiple choice (default)
+ * - "multi-select"   select N answers, e.g. GRE Sentence Equivalence (pick 2)
  * - "numeric"        free-response numeric entry / grid-in
  * - "two-part"       GMAT Data Insights Two-Part Analysis (two columns, shared options)
  * - "graphics"       GMAT Graphics Interpretation (figure + dropdown blanks)
@@ -19,10 +20,12 @@ export type Choice = {
  *
  * Multi-part types (two-part, graphics, table-analysis, and statement-style
  * multi-source) are scored all-or-nothing: every part must be correct, matching
- * official GMAT Data Insights scoring.
+ * official GMAT Data Insights scoring. "multi-select" is also all-or-nothing:
+ * the chosen set must exactly match the correct set.
  */
 export type QuestionType =
   | "mcq"
+  | "multi-select"
   | "numeric"
   | "two-part"
   | "graphics"
@@ -70,11 +73,14 @@ export type Question = {
   choices: Choice[];
   /**
    * For "mcq": the id of the correct choice, e.g. "B".
+   * For "multi-select": comma-separated correct ids, e.g. "B,E".
    * For "numeric": the correct value as a string, e.g. "15" or "3/4".
    * For "two-part": "<col1Id>,<col2Id>" (also derivable from parts).
    * For other multi-part types: leave blank; correctness comes from parts.
    */
   answer: string;
+  /** multi-select only: how many options to choose (default: count of correct ids). */
+  selectCount?: number;
   /**
    * Numeric only: if set, any value in the inclusive range [answer, answerMax]
    * is accepted (e.g. "between 0.33 and 0.34").

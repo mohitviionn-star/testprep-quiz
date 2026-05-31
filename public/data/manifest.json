@@ -37,7 +37,7 @@
       "section": "Verbal Reasoning",
       "description": "Text Completion, vocabulary in context, and Reading Comprehension across difficulty levels.",
       "file": "/data/gre-verbal.json",
-      "count": 10,
+      "count": 12,
       "timeLimitSec": 1080
     },
     {

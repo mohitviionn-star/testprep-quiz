@@ -4,7 +4,7 @@ import { useState } from "react";
 import RichText from "@/components/RichText";
 import Figure from "@/components/Figure";
 import type { DataTable, Question } from "@/lib/types";
-import { getParts, partAnswers, type AnswerValue } from "@/lib/scoring";
+import { getParts, partAnswers, selectedIds, type AnswerValue } from "@/lib/scoring";
 
 type Mode = "answer" | "review";
 
@@ -26,6 +26,14 @@ export default function QuestionView({ question: q, mode, value, onChange }: Pro
     onChange?.({ ...parts, [partId]: choiceId });
   }
 
+  // Toggle a choice in/out of a multi-select answer (stored as id→"1" map).
+  function toggleSelect(choiceId: string) {
+    const next = { ...parts };
+    if (next[choiceId]) delete next[choiceId];
+    else next[choiceId] = "1";
+    onChange?.(next);
+  }
+
   return (
     <div>
       {q.passage && (
@@ -45,7 +53,9 @@ export default function QuestionView({ question: q, mode, value, onChange }: Pro
       {q.table && <DataTableView table={q.table} />}
 
       <div className="mt-5">
-        {q.type === "numeric" ? (
+        {q.type === "multi-select" ? (
+          <MultiSelectBody q={q} review={review} value={value} onToggle={toggleSelect} />
+        ) : q.type === "numeric" ? (
           <NumericBody q={q} review={review} value={typeof value === "string" ? value : ""} onChange={(v) => onChange?.(v)} />
         ) : q.type === "two-part" ? (
           <TwoPartBody q={q} review={review} answers={parts} setPart={setPart} />
@@ -113,6 +123,67 @@ function McqBody({
             {review && isAns && <span className="ml-auto text-xs font-semibold text-emerald-700">✓ Answer</span>}
             {review && selected && !isAns && (
               <span className="ml-auto text-xs font-semibold text-rose-700">Your choice</span>
+            )}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+// ---------- Multi-select (e.g. GRE Sentence Equivalence) ----------
+
+function MultiSelectBody({
+  q,
+  review,
+  value,
+  onToggle,
+}: {
+  q: Question;
+  review: boolean;
+  value: AnswerValue | undefined;
+  onToggle: (choiceId: string) => void;
+}) {
+  const sel = new Set(selectedIds(value).map((s) => s.toUpperCase()));
+  const correct = new Set(q.answer.split(",").map((s) => s.trim().toUpperCase()));
+  const need = q.selectCount ?? correct.size;
+  return (
+    <div className="space-y-3">
+      <p className="text-sm font-medium text-slate-500">Select {need} answer{need === 1 ? "" : "s"}.</p>
+      {q.choices.map((c) => {
+        const picked = sel.has(c.id.toUpperCase());
+        const isAns = correct.has(c.id.toUpperCase());
+        let cls = "border-slate-200 hover:border-brand-300 hover:bg-slate-50";
+        if (review) {
+          cls = isAns
+            ? "border-emerald-300 bg-emerald-50"
+            : picked
+            ? "border-rose-300 bg-rose-50"
+            : "border-slate-200";
+        } else if (picked) {
+          cls = "border-brand-500 bg-brand-50";
+        }
+        return (
+          <button
+            key={c.id}
+            type="button"
+            disabled={review}
+            onClick={() => onToggle(c.id)}
+            className={`flex w-full items-center gap-3 rounded-xl border-2 px-4 py-3 text-left transition ${cls} ${review ? "cursor-default" : ""}`}
+          >
+            <span
+              className={`grid h-6 w-6 shrink-0 place-items-center rounded-md border-2 text-xs font-bold ${
+                picked || (review && isAns) ? "border-brand-600 bg-brand-600 text-white" : "border-slate-300 text-transparent"
+              }`}
+            >
+              ✓
+            </span>
+            <span className="text-slate-800">
+              <RichText text={c.text} />
+            </span>
+            {review && isAns && <span className="ml-auto text-xs font-semibold text-emerald-700">✓ Answer</span>}
+            {review && picked && !isAns && (
+              <span className="ml-auto text-xs font-semibold text-rose-700">Your pick</span>
             )}
           </button>
         );
