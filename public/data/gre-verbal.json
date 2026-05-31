@@ -2,11 +2,14 @@
   "id": "gre-verbal",
   "title": "GRE Verbal Reasoning",
   "exam": "GRE",
-  "section": "Text Completion & Reading",
-  "description": "Vocabulary in context, sentence logic, and reading comprehension.",
+  "section": "Verbal Reasoning",
+  "description": "GRE Verbal: Text Completion, vocabulary in context, and Reading Comprehension across difficulty levels.",
+  "timeLimitSec": 1080,
   "questions": [
     {
       "id": "q1",
+      "category": "Text Completion",
+      "difficulty": "easy",
       "prompt": "Although the critics found the novel ______, readers embraced its sprawling, unhurried storytelling.",
       "choices": [
         { "id": "A", "text": "engaging" },
@@ -19,6 +22,8 @@
     },
     {
       "id": "q2",
+      "category": "Vocabulary",
+      "difficulty": "easy",
       "prompt": "Select the word that most nearly means 'to make worse':",
       "choices": [
         { "id": "A", "text": "Alleviate" },
@@ -31,32 +36,36 @@
     },
     {
       "id": "q3",
-      "passage": "Coral reefs occupy less than one percent of the ocean floor, yet they support roughly a quarter of all marine species. This disproportion has long puzzled ecologists, who note that the surrounding tropical waters are remarkably nutrient-poor. The prevailing explanation is that reefs recycle nutrients with extraordinary efficiency: symbiotic algae living within coral tissue capture and return nutrients that would otherwise be lost, allowing the ecosystem to sustain a density of life far beyond what its waters would seem to permit.",
-      "prompt": "The passage primarily serves to:",
+      "category": "Text Completion",
+      "difficulty": "medium",
+      "prompt": "The scientist's ______ approach, testing every assumption, slowed the project but ensured reliable results.",
       "choices": [
-        { "id": "A", "text": "describe how coral reefs were first discovered" },
-        { "id": "B", "text": "explain an apparent paradox and the leading account of it" },
-        { "id": "C", "text": "argue that reefs should be protected from pollution" },
-        { "id": "D", "text": "compare tropical and temperate marine ecosystems" }
+        { "id": "A", "text": "cavalier" },
+        { "id": "B", "text": "reckless" },
+        { "id": "C", "text": "meticulous" },
+        { "id": "D", "text": "indifferent" }
       ],
-      "answer": "B",
-      "explanation": "The passage poses a puzzle (high biodiversity despite nutrient-poor waters) and then gives the prevailing explanation (efficient nutrient recycling). That is describing a paradox and its leading account."
+      "answer": "C",
+      "explanation": "Testing every assumption describes a careful, detail-oriented approach — \"meticulous.\""
     },
     {
       "id": "q4",
-      "passage": "Coral reefs occupy less than one percent of the ocean floor, yet they support roughly a quarter of all marine species. This disproportion has long puzzled ecologists, who note that the surrounding tropical waters are remarkably nutrient-poor. The prevailing explanation is that reefs recycle nutrients with extraordinary efficiency: symbiotic algae living within coral tissue capture and return nutrients that would otherwise be lost, allowing the ecosystem to sustain a density of life far beyond what its waters would seem to permit.",
-      "prompt": "According to the passage, the symbiotic algae contribute to reef life chiefly by:",
+      "category": "Vocabulary",
+      "difficulty": "easy",
+      "prompt": "Choose the word most opposite in meaning to 'transient':",
       "choices": [
-        { "id": "A", "text": "producing more offspring than other marine organisms" },
-        { "id": "B", "text": "filtering pollutants out of tropical waters" },
-        { "id": "C", "text": "retaining nutrients that would otherwise be lost" },
-        { "id": "D", "text": "expanding the physical area covered by reefs" }
+        { "id": "A", "text": "Fleeting" },
+        { "id": "B", "text": "Permanent" },
+        { "id": "C", "text": "Temporary" },
+        { "id": "D", "text": "Brief" }
       ],
-      "answer": "C",
-      "explanation": "The passage states the algae \"capture and return nutrients that would otherwise be lost,\" which is the mechanism for sustaining the dense ecosystem."
+      "answer": "B",
+      "explanation": "Transient means short-lived; its opposite is \"permanent.\" The others are synonyms."
     },
     {
       "id": "q5",
+      "category": "Text Completion",
+      "difficulty": "medium",
       "prompt": "Her argument was so ______ that even her opponents conceded its logic.",
       "choices": [
         { "id": "A", "text": "specious" },
@@ -66,6 +75,78 @@
       ],
       "answer": "B",
       "explanation": "If opponents conceded its logic, the argument was clear and convincing — \"cogent.\""
+    },
+    {
+      "id": "q6",
+      "category": "Reading Comprehension",
+      "difficulty": "medium",
+      "passage": "Coral reefs occupy less than one percent of the ocean floor, yet they support roughly a quarter of all marine species. This disproportion has long puzzled ecologists, who note that the surrounding tropical waters are remarkably nutrient-poor. The prevailing explanation is that reefs recycle nutrients with extraordinary efficiency.",
+      "prompt": "The passage primarily serves to:",
+      "choices": [
+        { "id": "A", "text": "describe how coral reefs were first discovered" },
+        { "id": "B", "text": "explain an apparent paradox and the leading account of it" },
+        { "id": "C", "text": "argue that reefs should be protected from pollution" },
+        { "id": "D", "text": "compare tropical and temperate ecosystems" }
+      ],
+      "answer": "B",
+      "explanation": "The passage poses a puzzle (high biodiversity despite nutrient-poor waters) and gives the prevailing explanation (efficient nutrient recycling)."
+    },
+    {
+      "id": "q7",
+      "category": "Vocabulary",
+      "difficulty": "medium",
+      "prompt": "'Ephemeral' most nearly means:",
+      "choices": [
+        { "id": "A", "text": "long-lasting" },
+        { "id": "B", "text": "short-lived" },
+        { "id": "C", "text": "colorful" },
+        { "id": "D", "text": "weighty" }
+      ],
+      "answer": "B",
+      "explanation": "Ephemeral means lasting for a very short time."
+    },
+    {
+      "id": "q8",
+      "category": "Text Completion",
+      "difficulty": "hard",
+      "prompt": "The senator's speech was full of ______: vague promises that committed her to nothing in particular.",
+      "choices": [
+        { "id": "A", "text": "platitudes" },
+        { "id": "B", "text": "specifics" },
+        { "id": "C", "text": "mandates" },
+        { "id": "D", "text": "concessions" }
+      ],
+      "answer": "A",
+      "explanation": "\"Vague promises that committed her to nothing\" defines platitudes — trite, empty statements. The others imply concrete content."
+    },
+    {
+      "id": "q9",
+      "category": "Vocabulary",
+      "difficulty": "hard",
+      "prompt": "A 'laconic' reply is best described as:",
+      "choices": [
+        { "id": "A", "text": "using very few words" },
+        { "id": "B", "text": "long and rambling" },
+        { "id": "C", "text": "angry and hostile" },
+        { "id": "D", "text": "warm and friendly" }
+      ],
+      "answer": "A",
+      "explanation": "Laconic means terse — using few words."
+    },
+    {
+      "id": "q10",
+      "category": "Reading Comprehension",
+      "difficulty": "hard",
+      "passage": "Although solar power was once dismissed as prohibitively expensive, the cost per watt has fallen so steeply that it now rivals fossil fuels in many markets. Critics who focus on intermittency, however, note that the sun does not always shine, and that affordable, large-scale storage remains the key obstacle to relying on solar around the clock.",
+      "prompt": "The passage implies that the main remaining barrier to wider solar adoption is:",
+      "choices": [
+        { "id": "A", "text": "the high cost per watt of solar panels" },
+        { "id": "B", "text": "a lack of suitable locations" },
+        { "id": "C", "text": "affordable large-scale energy storage" },
+        { "id": "D", "text": "competition from nuclear power" }
+      ],
+      "answer": "C",
+      "explanation": "The passage says cost has fallen to rival fossil fuels, so cost is no longer the barrier; it identifies storage (for intermittency) as \"the key obstacle.\""
     }
   ]
 }

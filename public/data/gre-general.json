@@ -1,0 +1,20 @@
+{
+  "id": "gre-general",
+  "title": "GRE General — Full-Length Mock",
+  "exam": "GRE",
+  "description": "A full-length practice exam in the GRE General Test structure: Verbal Reasoning and Quantitative Reasoning, scored on the official 130–170 per-measure scale (estimated, 260–340 total).",
+  "sections": [
+    {
+      "id": "gre-verbal",
+      "title": "Verbal Reasoning",
+      "file": "/data/gre-verbal.json",
+      "timeLimitSec": 1800
+    },
+    {
+      "id": "gre-quant",
+      "title": "Quantitative Reasoning",
+      "file": "/data/gre-quant.json",
+      "timeLimitSec": 1800
+    }
+  ]
+}

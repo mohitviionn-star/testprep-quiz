@@ -85,10 +85,10 @@ export function countCorrect(
   return questions.filter((q) => isCorrect(q, answers[q.id])).length;
 }
 
-// ---- GMAT Focus Edition score mapping ----
-// NOTE: the real GMAT uses a proprietary CAT algorithm; these are transparent,
-// clearly-labeled *estimates* on the official scales (section 60-90, total
-// 205-805). Even official practice exams carry a ±30-40 point margin.
+// ---- Exam score mapping ----
+// NOTE: real exams use proprietary scoring (GMAT is CAT; GRE/SAT are section/
+// module-adaptive). These are transparent, clearly-labeled *estimates* on the
+// official scales. Even official practice exams carry a meaningful margin.
 
 export function gmatSectionScore(correct: number, total: number): number {
   if (!total) return 60;
@@ -102,6 +102,74 @@ export function gmatTotalScore(sectionScores: number[]): number {
     sectionScores.reduce((s, v) => s + (v - 60) / 30, 0) / sectionScores.length;
   const raw = 205 + avgNorm * 600;
   return Math.min(805, Math.max(205, Math.round(raw / 10) * 10));
+}
+
+const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v));
+const sum = (a: number[]) => a.reduce((s, v) => s + v, 0);
+
+type Scale = {
+  /** min/max of a single section's scaled score */
+  min: number;
+  max: number;
+  sectionLabel: string;
+  totalLabel: string;
+  /** combine section scaled scores into a total */
+  total: (sectionScores: number[]) => number;
+};
+
+const SCALES: Record<string, Scale> = {
+  GMAT: {
+    min: 60,
+    max: 90,
+    sectionLabel: "GMAT section (60–90)",
+    totalLabel: "GMAT total (205–805)",
+    total: gmatTotalScore,
+  },
+  GRE: {
+    min: 130,
+    max: 170,
+    sectionLabel: "GRE section (130–170)",
+    totalLabel: "GRE total (260–340)",
+    total: (s) => clamp(Math.round(sum(s)), 260, 340),
+  },
+  SAT: {
+    min: 200,
+    max: 800,
+    sectionLabel: "SAT section (200–800)",
+    totalLabel: "SAT total (400–1600)",
+    // round to nearest 10, like real SAT section scores
+    total: (s) => clamp(Math.round(sum(s) / 10) * 10, 400, 1600),
+  },
+};
+
+function scaleFor(exam: string): Scale | undefined {
+  return SCALES[exam.toUpperCase()];
+}
+
+export type ScaledScore = { value: number; label: string };
+
+/** Scaled score for a single section, by accuracy. null for exams without a scale. */
+export function sectionScaled(exam: string, correct: number, total: number): ScaledScore | null {
+  const s = scaleFor(exam);
+  if (!s || !total) return null;
+  const pct = correct / total;
+  const value = Math.round(s.min + pct * (s.max - s.min));
+  return { value, label: s.sectionLabel };
+}
+
+/** Combined total from section scaled values (for full-length mocks). */
+export function totalScaled(exam: string, sectionValues: number[]): ScaledScore | null {
+  const s = scaleFor(exam);
+  if (!s || !sectionValues.length) return null;
+  return { value: s.total(sectionValues), label: s.totalLabel };
+}
+
+/** Map an adaptive ability estimate (theta in [-2,2]) to the exam's section scale. */
+export function abilityScaled(exam: string, theta: number): ScaledScore | null {
+  const s = scaleFor(exam);
+  if (!s) return null;
+  const value = clamp(Math.round(s.min + ((theta + 2) / 4) * (s.max - s.min)), s.min, s.max);
+  return { value, label: s.sectionLabel };
 }
 
 // ---- Strengths & weaknesses (by category) ----
