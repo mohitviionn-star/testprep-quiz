@@ -68,6 +68,7 @@ function normalizeType(raw: Record<string, any>, hasChoices: boolean): QuestionT
   if (t != null) {
     const s = String(t).toLowerCase().replace(/[^a-z]/g, "");
     if (["numeric", "numericentry", "gridin", "fillin", "input", "freeresponse", "number"].includes(s)) return "numeric";
+    if (["multiselect", "multipleselect", "selectmany", "sentenceequivalence", "selectinpassage", "checkbox"].includes(s)) return "multi-select";
     if (["twopart", "twopartanalysis"].includes(s)) return "two-part";
     if (["graphics", "graphicsinterpretation", "graph", "dropdown"].includes(s)) return "graphics";
     if (["tableanalysis", "table"].includes(s)) return "table-analysis";
@@ -129,11 +130,17 @@ function normalizeQuestion(raw: Record<string, any>, index: number): Question | 
   const type = normalizeType(raw, choices.length > 0);
   const answerRaw = pick(raw, ["answer", "correct", "correctanswer", "key", "solution"]);
 
-  // Numeric questions keep the raw value; MCQ answers resolve to a choice id.
-  const answer =
-    type === "numeric"
-      ? String(answerRaw ?? "").trim()
-      : resolveAnswer(answerRaw, choices);
+  // Numeric keeps the raw value; multi-select joins ids; MCQ resolves to a choice id.
+  let answer: string;
+  if (type === "numeric") {
+    answer = String(answerRaw ?? "").trim();
+  } else if (type === "multi-select") {
+    const ids = Array.isArray(answerRaw) ? answerRaw : String(answerRaw ?? "").split(",");
+    answer = ids.map((x) => resolveAnswer(x, choices)).filter(Boolean).join(",");
+  } else {
+    answer = resolveAnswer(answerRaw, choices);
+  }
+  const selectCountRaw = pick(raw, ["selectcount", "choose", "pick"]);
 
   const answerMaxRaw = pick(raw, ["answermax", "answer_max", "max", "upper"]);
   const toleranceRaw = pick(raw, ["tolerance", "tol", "epsilon"]);
@@ -178,6 +185,7 @@ function normalizeQuestion(raw: Record<string, any>, index: number): Question | 
     prompt: String(prompt),
     choices,
     answer,
+    selectCount: selectCountRaw != null && Number.isFinite(Number(selectCountRaw)) ? Number(selectCountRaw) : undefined,
     answerMax: Number.isFinite(answerMax) ? answerMax : undefined,
     tolerance: Number.isFinite(tolerance) ? tolerance : undefined,
     unit: unit != null && String(unit).trim() !== "" ? String(unit) : undefined,

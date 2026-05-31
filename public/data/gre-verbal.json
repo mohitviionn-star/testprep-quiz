@@ -147,6 +147,42 @@
       ],
       "answer": "C",
       "explanation": "The passage says cost has fallen to rival fossil fuels, so cost is no longer the barrier; it identifies storage (for intermittency) as \"the key obstacle.\""
+    },
+    {
+      "id": "q11",
+      "type": "multi-select",
+      "category": "Sentence Equivalence",
+      "difficulty": "medium",
+      "prompt": "Select the TWO answers that best complete the sentence and produce sentences alike in meaning: \"The captain stayed remarkably ______ as the storm battered the ship, never once raising her voice.\"",
+      "choices": [
+        { "id": "A", "text": "composed" },
+        { "id": "B", "text": "frantic" },
+        { "id": "C", "text": "unflappable" },
+        { "id": "D", "text": "despondent" },
+        { "id": "E", "text": "garrulous" },
+        { "id": "F", "text": "irate" }
+      ],
+      "answer": "A,C",
+      "selectCount": 2,
+      "explanation": "\"Never raising her voice\" during a storm signals calm. Both \"composed\" and \"unflappable\" mean calm and unshaken, producing equivalent sentences."
+    },
+    {
+      "id": "q12",
+      "type": "multi-select",
+      "category": "Sentence Equivalence",
+      "difficulty": "hard",
+      "prompt": "Select the TWO answers that best complete the sentence and produce sentences alike in meaning: \"Although praised for its striking visuals, the lecture's delivery was so ______ that students struggled to stay awake.\"",
+      "choices": [
+        { "id": "A", "text": "riveting" },
+        { "id": "B", "text": "soporific" },
+        { "id": "C", "text": "concise" },
+        { "id": "D", "text": "tedious" },
+        { "id": "E", "text": "eloquent" },
+        { "id": "F", "text": "inflammatory" }
+      ],
+      "answer": "B,D",
+      "selectCount": 2,
+      "explanation": "\"Struggled to stay awake\" signals a dull delivery. \"Soporific\" (sleep-inducing) and \"tedious\" (boring) both convey this, yielding equivalent sentences."
     }
   ]
 }

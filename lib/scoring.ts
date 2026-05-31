@@ -45,8 +45,23 @@ export function isMultiPart(q: Question): boolean {
   return getParts(q).length > 0;
 }
 
+/** Correct answer ids for a multi-select question, as a set. */
+function multiAnswerSet(q: Question): Set<string> {
+  return new Set(q.answer.split(",").map((s) => s.trim().toUpperCase()).filter(Boolean));
+}
+
+/** Ids the user selected for a multi-select question (stored as a key→"1" map). */
+export function selectedIds(given: AnswerValue | undefined): string[] {
+  return Object.keys(partAnswers(given)).filter((k) => partAnswers(given)[k]);
+}
+
 /** Is this answer fully correct? Multi-part requires every part correct (all-or-nothing). */
 export function isCorrect(q: Question, given: AnswerValue | undefined): boolean {
+  if (q.type === "multi-select") {
+    const want = multiAnswerSet(q);
+    const got = new Set(selectedIds(given).map((s) => s.toUpperCase()));
+    return want.size > 0 && got.size === want.size && [...want].every((id) => got.has(id));
+  }
   const parts = getParts(q);
   if (parts.length) {
     const a = partAnswers(given);
@@ -69,6 +84,10 @@ export function isCorrect(q: Question, given: AnswerValue | undefined): boolean 
 
 /** Has the user supplied a complete answer (all parts, for multi-part)? */
 export function hasAnswer(q: Question, given: AnswerValue | undefined): boolean {
+  if (q.type === "multi-select") {
+    const need = q.selectCount ?? multiAnswerSet(q).size;
+    return selectedIds(given).length >= Math.max(1, need);
+  }
   const parts = getParts(q);
   if (parts.length) {
     const a = partAnswers(given);
